@@ -12,7 +12,6 @@ class CalculateTotalTest < MiniTest::Unit::TestCase
   end
 
   def test_two_orders
-    assert_equal "$4.20", calculate_total(quantity: 2, unit_price: 2)
-    assert_equal "$2.80", calculate_total(quantity: 3, unit_price: 0.89)
+    assert_equal "[$4.20, $2.80]", calculate_total([{quantity: 2, unit_price: 2},{quantity: 3, unit_price: 0.89}])
   end
 end
